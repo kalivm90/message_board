@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <button>Send new message</button>
+    <p>Welcome to <%= title %></p>
+    <% messages.forEach(i => { %>
+      <br> <%= i.user %>
+      <br> <%= i.text %>
+      <br> <%= i.added %>
+      <br>
+    <% }) %>
+  </body>
+  <script>
+    const button = document.querySelector("button")
+    button.addEventListener("click", () => {
+      window.location.pathname = "/new"
+    })
+  </script>
+</html>
